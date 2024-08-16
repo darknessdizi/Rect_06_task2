@@ -2,139 +2,115 @@
   box-sizing: border-box;
 }
 
-/* .conteiner {
+.conteiner {
   margin: 30px auto;
   width: 1000px;
 }
 
-.conteiner__form {
+.conteiner__header {
   display: flex;
-  justify-content: center;
-}
-
-.block__form {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 60%;
-}
-
-.form__label {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-.form__label__title {
-  margin-left: 15px;
-}
-
-.input__label {
-  height: 30px;
-  padding-left: 10px;
-  margin-top: 15px;
-}
-
-.form__btn {
-  height: 30px;
-  padding: 1px 25px;
-}
-
-.conteiner__clock {
-  display: flex;
-  justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
-  margin-top: 20px;
 }
 
-.clock__item {
-  margin-bottom: 20px;
+.header__title {
+  font-size: 60px;
 }
 
-.clock__item:nth-child(n+2) {
-  margin-left: 25px;
-}
-
-.clock__item:nth-child(5n+6) {
-  margin-left: 0px;
-}
-
-.clock__title {
-  text-align: center;
-  margin-bottom: 20px;
-} */
-
-/* ----------- элемент часы ------------ */
-
-/* .clock {
-  width: 180px;
-  height: 180px;
-  background-image: linear-gradient(70deg, black, white);
-  background-size: cover;
+.btn__update {
+  width: 70px;
+  height: 70px;
+  background-image: url('./img/replacement.svg');
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  border: 1px solid black;
   border-radius: 50%;
+  margin-left: 30px;
+  background-color: white;
+}
+
+.btn__update:hover {
+  background-color: blanchedalmond;
+}
+
+.conteiner__form {
+  width: 500px;
   position: relative;
 }
 
-.hr,
-.min,
-.sec {
-  width: 1%;
+.label__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.label__content {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.form__textarea {
+  resize: none;
+  font-size: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 10px;
+}
+
+.form__btn {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -100%);
-  transform-origin: bottom;
-  z-index: 2;
-  border-radius: 2em;
-}
-
-.pin {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 1em;
-  height: 1em;
-  background: rgb(38, 0, 255);
-  border: 2px solid #ffffff;
-  border-radius: 10em;
-  margin: auto;
-  z-index: 10;
-}
-
-.hr {
-  height: 25%;
-  background-color: #ff0000;
-}
-
-.min {
-  height: 30%;
-  background-color: #ff9900;
-}
-
-.sec {
-  height: 40%;
-  background-color: #99ff00;
-  transform-origin: 50% 85%;
-}
-
-.clock__cross {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: lightgray;
-  background-image: url('./img/cross.png');
-  background-position: center;
+  width: 60px;
+  height: 60px;
+  background-image: url('./img/arrow.svg');
+  background-position: 16px;
+  background-size: 50%;
   background-repeat: no-repeat;
-  background-size: cover;
   border: 1px solid black;
   border-radius: 50%;
-  right: 0;
-  top: -20px; 
+  background-color: white;
+  right: -28px;
+  bottom: -20px;
 }
 
-.clock__cross:hover {
-  background-color: chartreuse;
-} */
+.form__btn:hover {
+  background-color: blanchedalmond;
+}
+
+.conteiner__cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.cards__item {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+  margin-right: 30px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.item__context {
+  overflow-y: auto;
+  height: 200px;
+  padding: 10px;
+}
+
+.cards__item__btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('./img/red-cross.svg');
+  background-position: center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: white;
+  right: -25px;
+  top: -25px;
+}
+
+.cards__item__btn:hover {
+  background-color: blanchedalmond;
+}
