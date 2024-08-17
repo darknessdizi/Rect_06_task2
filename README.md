@@ -3,7 +3,19 @@ CRUD
 
 [![Build status](https://ci.appveyor.com/api/projects/status/cm1uk82w5n7i5u52?svg=true)](https://ci.appveyor.com/project/darknessdizi/rect-06-task2)
 
+## Backend
+
+*Ссылка на git-hub репозиторий (backend):* https://github.com/darknessdizi/Rect_06_task2_backend.git
+
+*Ссылка сервера на render:*
+
+---
+
+## Fronted
+
 *Ссылка на страницу:* https://darknessdizi.github.io/Rect_06_task2/
+
+---
 
 Вам необходимо реализовать базовый CRUD без обновления при работе с HTTP.
 
