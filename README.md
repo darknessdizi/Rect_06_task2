@@ -1,6 +1,10 @@
 CRUD
 ===
 
+[![Build status](https://ci.appveyor.com/api/projects/status/cm1uk82w5n7i5u52?svg=true)](https://ci.appveyor.com/project/darknessdizi/rect-06-task2)
+
+*Ссылка на страницу:* https://darknessdizi.github.io/Rect_06_task2/
+
 Вам необходимо реализовать базовый CRUD без обновления при работе с HTTP.
 
 Backend вы можете либо написать сами, либо взять готовый из каталога `backend`.

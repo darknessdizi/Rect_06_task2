@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useEffect, useState } from 'react';
 import './App.css';
 import { Cards } from './components/Cards/Cards';
@@ -16,7 +15,6 @@ function App() {
 
   useEffect(() => {
     // Вызов useEffect при старте и далее при изменении параметра app.update
-    console.log('useEffect');
     fetch(`${serverURL}/notes`)
       .then((response) => response.json())
       .then((body) => {
