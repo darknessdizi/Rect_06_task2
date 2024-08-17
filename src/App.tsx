@@ -7,10 +7,10 @@ import { IAppState } from './modal/modal';
 
 function App() {
   const serverURL = 'http://localhost:9000';
+  const [varForUpdate, setVarForUpdate] = useState<boolean>(true);
   const [app, setApp] = useState<IAppState>({
     value: '',
     arrayCards: [],
-    update: true,
   })
 
   useEffect(() => {
@@ -19,12 +19,11 @@ function App() {
       .then((response) => response.json())
       .then((body) => {
         setApp({
-          ...app,
           ['value']: '',
           ['arrayCards']: [...body],
         });
       });
-  }, [app.update]);
+  }, [varForUpdate]);
 
   const onChangeTextarea = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     // Изменение содержимого в textarea
@@ -43,22 +42,16 @@ function App() {
       body: new FormData(elementForm),
     });
     if (responsePost.status === 204) {
-      setApp({
-        ...app,
-        ['update']: !app.update,
-      });
+      setVarForUpdate(!varForUpdate);
     }
   }
 
   const onClickUpdata = () => {
     // Нажали кнопку обновить данные
-    setApp({
-      ...app,
-      ['update']: !app.update,
-    });
+    setVarForUpdate(!varForUpdate);
   }
 
-  const onClickCross = async (event: React.ClipboardEvent<HTMLDivElement>) => {
+  const onClickCross = async (event: React.MouseEvent<HTMLDivElement>) => {
     // Удаляем карточку
     const target = event.target as HTMLDivElement;
     const parent = target.closest('.cards__item');
@@ -68,10 +61,7 @@ function App() {
         method: 'DELETE',
       });
       if (responsePost.status === 204) {
-        setApp({
-          ...app,
-          ['update']: !app.update,
-        });
+        setVarForUpdate(!varForUpdate);
       }
     }
   }

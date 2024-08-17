@@ -1,6 +1,5 @@
 export interface IAppState {
   value: string,
-  update: boolean,
   arrayCards: ({
     content: string,
     id: string,
@@ -9,7 +8,7 @@ export interface IAppState {
 
 export interface IHeaderProps {
   title: string,
-  clickBtn: (event: React.ClipboardEvent<HTMLDivElement>) => Promise<void>,
+  clickBtn: (event: React.MouseEvent<HTMLDivElement>) => Promise<void>,
 }
 
 export interface IFormProps {
@@ -25,11 +24,11 @@ export interface ICardsProps {
     content: string,
     id: string,
   })[], 
-  callback: (event: React.ClipboardEvent<HTMLDivElement>) => Promise<void>,
+  callback: (event: React.MouseEvent<HTMLDivElement>) => Promise<void>,
 }
 
 export interface IItemCardProps {
   content: string, 
   id: string, 
-  clickDelete: (event: React.ClipboardEvent<HTMLDivElement>) => Promise<void>,
+  clickDelete: (event: React.MouseEvent<HTMLDivElement>) => Promise<void>,
 }
