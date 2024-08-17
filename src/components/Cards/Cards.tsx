@@ -1,12 +1,13 @@
 import { ItemCard } from "../ItemCard/ItemCard"
 
-export const Cards = ({children, arrayCards}) => {
+export const Cards = (props) => {
+  const {children, arrayCards, callback} = props;
 
   return (
     <div className="conteiner__cards">
         {children}
         {
-          arrayCards.map((item) => <ItemCard content={item.content} id={item.id} key={item.id} />)
+          arrayCards.map((item) => <ItemCard content={item.content} id={item.id} key={item.id} clickDelete={callback} />)
         }
     </div>
   )

@@ -98,6 +98,10 @@
   padding: 10px;
 }
 
+.context {
+  white-space: pre-wrap;
+}
+
 .cards__item__btn {
   position: absolute;
   width: 50px;
