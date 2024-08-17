@@ -1,4 +1,6 @@
-export const ItemCard = (props) => {
+import { IItemCardProps } from "../../modal/modal";
+
+export const ItemCard = (props: IItemCardProps) => {
   const { content, id, clickDelete } = props;
 
   return (

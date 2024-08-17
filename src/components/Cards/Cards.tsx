@@ -1,6 +1,7 @@
-import { ItemCard } from "../ItemCard/ItemCard"
+import { ICardsProps } from "../../modal/modal";
+import { ItemCard } from "../ItemCard/ItemCard";
 
-export const Cards = (props) => {
+export const Cards = (props: ICardsProps) => {
   const {children, arrayCards, callback} = props;
 
   return (

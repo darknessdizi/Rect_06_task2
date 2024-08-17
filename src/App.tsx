@@ -4,10 +4,11 @@ import './App.css';
 import { Cards } from './components/Cards/Cards';
 import { Form } from './components/Form/Form';
 import { Header } from './components/Header/Header';
+import { IAppState } from './modal/modal';
 
 function App() {
   const serverURL = 'http://localhost:9000';
-  const [app, setApp] = useState({
+  const [app, setApp] = useState<IAppState>({
     value: '',
     arrayCards: [],
     update: true,

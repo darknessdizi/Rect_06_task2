@@ -1,4 +1,6 @@
-export const Header = (props) => {
+import { IHeaderProps } from "../../modal/modal";
+
+export const Header = (props: IHeaderProps) => {
   const { title, clickBtn } = props;
 
   return (
