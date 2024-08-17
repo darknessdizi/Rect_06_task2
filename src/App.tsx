@@ -51,9 +51,9 @@ function App() {
     setVarForUpdate(!varForUpdate);
   }
 
-  const onClickCross = async (event: React.MouseEvent<HTMLDivElement>) => {
+  const onClickCross = async (event: React.MouseEvent<HTMLButtonElement>) => {
     // Удаляем карточку
-    const target = event.target as HTMLDivElement;
+    const target = event.target as HTMLButtonElement;
     const parent = target.closest('.cards__item');
     if (parent) {
       const { id } = parent;

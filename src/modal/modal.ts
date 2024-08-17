@@ -24,11 +24,11 @@ export interface ICardsProps {
     content: string,
     id: string,
   })[], 
-  callback: (event: React.MouseEvent<HTMLDivElement>) => Promise<void>,
+  callback: (event: React.MouseEvent<HTMLButtonElement>) => Promise<void>,
 }
 
 export interface IItemCardProps {
   content: string, 
   id: string, 
-  clickDelete: (event: React.MouseEvent<HTMLDivElement>) => Promise<void>,
+  clickDelete: (event: React.MouseEvent<HTMLButtonElement>) => Promise<void>,
 }
