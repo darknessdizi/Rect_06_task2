@@ -1,43 +1,61 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
+import { Cards } from './components/Cards/Cards';
+import { Form } from './components/Form/Form';
+import { Header } from './components/Header/Header';
 
 function App() {
+  const serverURL = 'http://localhost:9000';
+  const [app, setApp] = useState({
+    value: '',
+    arrayCards: [],
+  })
+
+  useEffect(() => {
+    console.log('begin');
+    fetch(`${serverURL}/notes`)
+      .then((response) => response.json())
+      .then((body) => {
+        setApp({
+          ...app,
+          ['arrayCards']: [...body],
+          ['value']: '',
+        });
+      });
+  }, []);
+
+  const onChangeTextarea = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    // Изменение содержимого в textarea
+    setApp({
+      ...app,
+      ['value']: event.target.value,
+    });
+  }
   
+  const onSubmitForm = async (event: React.FormEvent<HTMLFormElement>) => {
+    // Отправка формы (событие submit)
+    event.preventDefault();
+    const elementForm = event.target as HTMLFormElement;
+    const responsePost = await fetch(`${serverURL}/notes`, {
+      method: 'POST',
+      body: new FormData(elementForm),
+    });
+    if (responsePost.status === 204) {
+      const responseGet = await fetch(`${serverURL}/notes`);
+      const body = await responseGet.json();
+      setApp({
+        ...app,
+        ['arrayCards']: [...body],
+        ['value']: '',
+      });
+    }
+  }
 
   return (
     <div className="conteiner">
-
-      <div className="conteiner__header">
-        <h1 className="header__title">Notes</h1>
-        <div className="btn__update"></div>
-      </div>
-
-      <div className="conteiner__form">
-        <form className="form__content">
-          <label className="c">
-            <span className="label__content">New Note</span>
-            <textarea className="form__textarea" name="text" rows="10" required ></textarea>
-          </label>
-          <button type="submit" className="form__btn"></button>
-        </form>
-      </div>
-
-      <div className="conteiner__cards">
-        <div className="cards__item">
-          <div className="item__context">
-            <p>много текста много текста много текста много текста много текста много текста</p>
-          </div>
-          <button type="button" className="cards__item__btn"></button>
-        </div>
-
-        <div className="cards__item">
-          <div className="item__context">
-            <p>много текста много текста много текста много текста много текста много текста много текста много текста много текста много текста много текста много текстамного текста много текста много текста много текста много текста много текста</p>
-          </div>
-          <button type="button" className="cards__item__btn"></button>
-        </div>
-      </div>
-
+      <Header title="Notes" />
+      <Cards arrayCards={app.arrayCards} />
+      <Form title="New Note" callbackSubmit={onSubmitForm} callbackChange={onChangeTextarea} value={app.value} />
     </div>
   )
 }
