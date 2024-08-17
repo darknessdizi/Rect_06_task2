@@ -8,7 +8,7 @@ export interface IAppState {
 
 export interface IHeaderProps {
   title: string,
-  clickBtn: (event: React.MouseEvent<HTMLDivElement>) => Promise<void>,
+  clickBtn: () => void,
 }
 
 export interface IFormProps {
@@ -19,7 +19,7 @@ export interface IFormProps {
 }
 
 export interface ICardsProps {
-  children: React.ReactNode, 
+  children?: React.ReactNode, 
   arrayCards: ({
     content: string,
     id: string,
