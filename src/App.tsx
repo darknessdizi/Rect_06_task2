@@ -6,7 +6,7 @@ import { Header } from './components/Header/Header';
 import { IAppState } from './modal/modal';
 
 function App() {
-  const serverURL = 'http://localhost:9000';
+  const serverURL = 'https://rect-06-task2-backend.onrender.com';
   const [varForUpdate, setVarForUpdate] = useState<boolean>(true);
   const [app, setApp] = useState<IAppState>({
     value: '',

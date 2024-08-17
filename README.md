@@ -7,7 +7,7 @@ CRUD
 
 *Ссылка на git-hub репозиторий (backend):* https://github.com/darknessdizi/Rect_06_task2_backend.git
 
-*Ссылка сервера на render:*
+*Ссылка сервера на render:* https://rect-06-task2-backend.onrender.com
 
 ---
 
